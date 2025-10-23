@@ -44,7 +44,14 @@ app = FastAPI(
 # Add CORS middleware to allow frontend to connect
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173","https://howismybanana.netlify.app/", "http://localhost:3000"],  # Vite default port
+    allow_origins=[
+        "http://localhost:5173",
+        "http://localhost:3000",
+        "http://localhost:8000",
+        "http://localhost:10000",
+        "https://howismybanana.netlify.app",
+        "https://how-is-my-banana-backend.onrender.com"
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
