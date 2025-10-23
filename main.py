@@ -7,9 +7,13 @@ import cv2
 
 # Force TensorFlow to use CPU only (no GPU on Render)
 os.environ['CUDA_VISIBLE_DEVICES'] = '-1'
-os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 
 import tensorflow as tf
+
+# Configure TensorFlow to use CPU only
+tf.config.set_visible_devices([], 'GPU')
+
 from fastapi import FastAPI, UploadFile, File, HTTPException
 from fastapi.responses import JSONResponse
 from fastapi.middleware.cors import CORSMiddleware
