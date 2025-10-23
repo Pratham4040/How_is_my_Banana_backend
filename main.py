@@ -4,6 +4,11 @@ import logging
 from typing import List
 import numpy as np
 import cv2
+
+# Force TensorFlow to use CPU only (no GPU on Render)
+os.environ['CUDA_VISIBLE_DEVICES'] = '-1'
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
+
 import tensorflow as tf
 from fastapi import FastAPI, UploadFile, File, HTTPException
 from fastapi.responses import JSONResponse
