@@ -25,7 +25,7 @@ logger = logging.getLogger("BAnana")
 class_names = ['0', '2-1', '4-3', '5-6', '7-8']
 
 MODEL_DIR = os.path.join(os.path.dirname(__file__), "Model")
-model_path = os.path.join(MODEL_DIR, "bananaV1.h5")
+model_path = os.path.join(MODEL_DIR, "bananaV2.h5")
 loaded_model = tf.keras.models.load_model(model_path)
 
 def model_predict_from_array(img_bgr: np.ndarray) -> str:
